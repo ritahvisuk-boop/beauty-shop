@@ -6,10 +6,6 @@ const PORT = 3000;
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.send("Beauty Shop - сервер працює!");
-});
-
 app.get("/items", (req, res) => {
   db.all("SELECT * FROM items", [], (err, rows) => {
     if (err) {
